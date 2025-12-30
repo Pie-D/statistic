@@ -21,8 +21,9 @@ public class StatisticService {
     }
 
     public Statistic pushStatistic(StatisticReq req) {
+        String room = req.getRoom().split("@")[0];
         Statistic statistic = Statistic.builder()
-                .room(req.getRoom())
+                .room(room)
                 .email(req.getEmail())
                 .duration(req.getDuration())
                 .joinTs(req.getJoinTs())
