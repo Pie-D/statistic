@@ -1,0 +1,16 @@
+services:
+  stats-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: stats-app
+    restart: unless-stopped
+    ports:
+      - "8079:8080"
+    networks:
+      - stats-net
+
+networks:
+  stats-net:
+    driver: bridge
+
